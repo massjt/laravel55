@@ -4,3 +4,5 @@
     - PHP 7.2
 
     [安装参考链接](https://laravel-china.org/docs/laravel/5.5/installation/1282)
+
+    1. Eloquent 可以使用create批量赋值，seeder中可直接插入数组来使用
