@@ -41,4 +41,28 @@ class ArticleController extends Controller
         Article::find($id)->delete();
         return redirect()->back()->withInput()->withErrors('删除成功！');
     }
+    // edit
+    public function edit($id)
+    {
+        $article = Article::find($id);
+        if (empty($article)) {
+            return redirect()->back()->withInput()->withErrors('修改失败');
+        }
+        return view('admin/article/edit', ['article' => $article]);
+    }
+    // update
+    public function update(Request $request, $id)
+    {
+        // 判断
+        if ($request->has(['title', 'body'])) {
+            Article::where('id', $id)->update([
+                'title' => $request->title,
+                'body'  => $request->body
+            ]);
+            return redirect('admin/articles')->with('status', '更新成功');
+        } 
+        return redirect()->back()->withInput()->withErrors('更新失败');
+        
+        
+    }
 }

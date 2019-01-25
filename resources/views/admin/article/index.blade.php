@@ -12,7 +12,12 @@
                             {!! implode('<br>', $errors->all()) !!}
                         </div>
                     @endif
-
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    
                     <a href="{{ url('admin/articles/create') }}" class="btn btn-lg btn-primary">新增</a>
 
                     @foreach ($articles as $article)

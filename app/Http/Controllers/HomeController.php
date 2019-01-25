@@ -15,7 +15,6 @@ class HomeController extends Controller
     public function index()
     {
         // ->with('articles, \app\Article::all())
-        
         return view('home')->withArticles(Article::all());
     }
 }

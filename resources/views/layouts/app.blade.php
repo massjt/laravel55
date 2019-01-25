@@ -33,6 +33,13 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
+                        后台首页
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/admin/comments') }}">
+                       管理评论 
+                    </a>
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
